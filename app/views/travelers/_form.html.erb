@@ -1,0 +1,15 @@
+<%=form_for @traveler do |f|%>
+  <%=f.label :name%><br />
+  <%=f.text_field :name%> <br />
+  <%=f.label :email%><br />
+  <%=f.text_field :email%> <br />
+  <%=f.label :password%><br />
+  <%=f.text_field :password%> <br />
+  <%=f.label :budget%><br />
+  <%=f.text_field :budget%> <br />
+  <%=f.label :nationality%><br />
+  <%=f.text_field :nationality%> <br />
+  <%=f.label :interests%><br />
+  <%=f.text_field :interests%> <br />
+  <br><%=f.submit id: 'Start Adventure'%><br />
+<%end%>
