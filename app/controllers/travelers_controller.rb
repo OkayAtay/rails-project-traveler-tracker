@@ -1,4 +1,9 @@
 class TravelersController < ApplicationController
+  before_action :set_user, only: [:show]
+
+  def show
+
+  end
 
   def new
     @traveler = Traveler.new
@@ -14,6 +19,10 @@ class TravelersController < ApplicationController
   end
 
   private
+
+  def set_user
+    @traveler = Traveler.find(params[:id])
+  end
 
   def traveler_params
     params.require(:traveler).permit(

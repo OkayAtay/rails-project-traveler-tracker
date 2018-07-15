@@ -1,0 +1,23 @@
+<h1> Welcome <%=@traveler.name%> </h1>
+<h2> Info </h2>
+<ul style="list-style-type:none">
+  <li> <p><%=@traveler.name%></p> </li>
+  <li> <p><%=@traveler.budget%></p></li>
+  <li> <p><%=@traveler.nationality%></p></li>
+  <li> <p><%=@traveler.interests%></p></li>
+</ul>
+
+<h2> Upcoming Trips </h2>
+<ol>
+  <%=Trip.upcoming_trips each do |t|%>
+    <li><%=t.name%></li>
+  <%end%>
+</ol>
+
+<div class="first">
+  <a href="" class="button">Create New</a>
+</div>
+
+<div class="second">
+  <a href="" class="button">View All</a>
+</div>

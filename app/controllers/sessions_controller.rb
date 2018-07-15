@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @traveler = Traveler.find_by(:name params[:traveler][:name])
-    if @travler && @traveer.authenticate(params[:traveler][:name])
+    @traveler = Traveler.find_by(name: params[:traveler][:name])
+    if @traveler && @traveler.authenticate(params[:traveler][:name])
       session[:traveler_id] = @traveler.id
       redirect_to @traveler
     else

@@ -1,4 +1,19 @@
-<div class="form">
-  <%= form_for @traveler, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
-  <%end%>
+<div class="row">
+  <div class="column">
+    <div class="info-text">
+      <h1> Welcome Traveler </br>
+      Log In Here</h1> </br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="form">
+      <%= form_for @traveler, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
+        <%=f.label :name%> </br>
+        <%=f.text_field :name%> </br>
+        <%=f.label :password%> </br>
+        <%=f.password_field :password%> </br>
+        <%=f.submit "Log In"%>
+      <%end%>
+    </div>
+  </div>
 </div>
