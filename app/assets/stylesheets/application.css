@@ -1,10 +1,13 @@
 body {
-  background-color: #F5F5F5;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28small%29.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 10px;
+  }
 
-  .hero-image {
+  /* .hero-image {
     /* Sizing */
     width: 100vw;
     height: 100vh;
@@ -14,6 +17,38 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+  } */
+
+  a.button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    /* border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 40px;
+    color: black;
+    background-color: #ddd; */
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(425%, -400%); */
+    font-family: 'Markazi Text', serif;
+    text-align: center;
+  }
+
+  .hero a.button:hover{
+   color:#DDDDDD;
+   border-color:#DDDDDD;
   }
 
   .hero h1 {
@@ -36,6 +71,25 @@ body {
     left: 30%;
     color: white;
   }
+
+  .info-text h1 {
+    font-size:65px;
+    font-family: 'Markazi Text', serif
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  .form {
+    font-size:30px;
+    font-family: 'Markazi Text', serif;
+    text-align: center;
+    align: center;
+    background-color: #F5F5F5;
+    padding: 10px 40px;
+    width: 33%;
+  }
+
+
 
   .topnav {
     background-color: #00001a;
