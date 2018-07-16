@@ -1,0 +1,5 @@
+<h1> Trip Name: <%=@trip.name%></h1>
+<h1> Dates: <%=@trip.start_date%></h1> - <h1><%=@trip.name%></h1>
+<%@trip.attractions.each do |a|%>
+  <%=a.name%>
+<%end%>

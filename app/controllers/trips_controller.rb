@@ -9,6 +9,14 @@ class TripsController < ApplicationController
 
   end
 
+  def index
+    @trips = Trip.all
+  end
+
+  def show
+
+  end
+
 
   private
 
