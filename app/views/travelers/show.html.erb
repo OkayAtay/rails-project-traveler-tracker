@@ -1,23 +1,27 @@
-<h1> Welcome <%=@traveler.name%> </h1>
-<h2> Info </h2>
-<ul style="list-style-type:none">
-  <li> <p><%=@traveler.name%></p> </li>
-  <li> <p><%=@traveler.budget%></p></li>
-  <li> <p><%=@traveler.nationality%></p></li>
-  <li> <p><%=@traveler.interests%></p></li>
-</ul>
+<div class="row">
+  <div class="column">
+    <div class="info-text">
+      <h1> Welcome <%=@traveler.name%> </h1> </br>
+      <br><h2> Additional Info </h2></br>
+      <h2>Budget: $<%=@traveler.budget%></h2></br>
+      <h2>Nationality: <%=@traveler.nationality%></h2></br>
+      <h2>Interests: <%=@traveler.interests%></h2></br>
+    </div>
+ </div>
+ <div class="column">
+   <div class="form">
+      <h2> Upcoming Trips </h2>
+        <% if Trip.trips?%>
+          <%=Trip.upcoming_trips.each do |t|%>
+            <p><%=t.name%></p>
+          <%end%>
+        <%else%>
+          <p> You have no upcoming trips </p>
+        <%end%>
 
-<h2> Upcoming Trips </h2>
-<ol>
-  <%=Trip.upcoming_trips each do |t|%>
-    <li><%=t.name%></li>
-  <%end%>
-</ol>
+      <a href="/trips/new" class="button">Create New Trip</a>
 
-<div class="first">
-  <a href="" class="button">Create New</a>
-</div>
-
-<div class="second">
-  <a href="" class="button">View All</a>
+      <a href="/trips/index" class="button">View All Trips</a>
+    </div>
+  </div>
 </div>

@@ -79,13 +79,31 @@ body {
   }
 
   .info-text h1 {
+    position: relative;
     font-size:65px;
-    font-family: 'Markazi Text', serif
-    color: #FFFFFF;
+    font-family: 'Markazi Text', serif;
+    color: white;
+    text-align: center;
+    margin: auto;
+    top: 25%;
+  }
+
+  .info-text h2 {
+    font-size:45px;
+    font-family: 'Markazi Text', serif;
+    color: white;
+    text-align: center;
+    margin: auto;
+  }
+
+  .info-text p {
+    font-size:24px;
+    font-family: 'Markazi Text', serif;
+    color: white;
     text-align: left;
     margin: auto;
-    left: 30%;
     top: auto;
+    transform: translate(-30%, -50%);
   }
 
   .form {
@@ -97,6 +115,39 @@ body {
     width: 80%;
     position:relative;
     top: 25px;
+    left: 20%;
+  }
+
+  .form p {
+    font-size:30px;
+    font-family: 'Markazi Text', serif;
+    text-align: center;
+    color: black;
+    position:relative;
+    transform: translate(-30%, -50%);
+  }
+
+  .form a.button{
+    top: 70%;
+    /* transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Markazi Text', serif;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .form a.button:hover {
+    background-color: #008CBA;
+    color: white;
+  }
+
   }
 
   .topnav {
@@ -140,6 +191,7 @@ body {
       /* top: 50%; */
       flex: 40%;
       display: block;
+      left: 10%;
   }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
