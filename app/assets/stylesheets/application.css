@@ -85,7 +85,7 @@ body {
     color: white;
     text-align: center;
     margin: auto;
-    top: 25%;
+    top: 40px;
   }
 
   .info-text h2 {
@@ -141,6 +141,7 @@ body {
     font-family: 'Markazi Text', serif;
     text-align: center;
     text-decoration: none;
+    border: 2px solid #008CBA;
   }
 
   .form a.button:hover {
