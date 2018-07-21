@@ -5,6 +5,20 @@ class TravelersController < ApplicationController
 
   end
 
+  def index
+
+  end
+
+  def trips_index
+    @traveler = Traveler.find(params[:id])
+    @trips = @traveler.trips
+    render template: 'trips/index'
+  end
+
+  def trip
+    @trav
+  end
+
   def new
     @traveler = Traveler.new
   end

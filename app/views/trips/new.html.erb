@@ -1,0 +1,13 @@
+<h1>Test Path</h1>
+
+<%= form_for(@trip) do |f| %>
+  <%=f.hidden_field :traveler_id%>
+  <%=f.label :name%> </br>
+  <%= f.text_field :name %>
+  Trip Start Date: <%= f.datetime_select :start_date %>
+  Trip End Date: <%= f.datetime_select :end_date%>
+  (Add ability to either select an attraction or add your own)
+  <%=f.fields_for :attractions%>
+
+  <%= f.submit %>
+<% end %>
