@@ -8,12 +8,23 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @traveler = Traveler.find_by(name: params[:traveler][:name])
-    if @traveler && @traveler.authenticate(params[:traveler][:password])
-      session[:traveler_id] = @traveler.id
-      redirect_to @traveler
+    if auth_has = request.env["omniauth.auth"]
+      oauth_email = request.env["omniauth.auth"]["email"]
+      if @traveler = Traveler.find_by(email: oauth_email)
+        session[:traveler_id] = @traveler.id
+        redirect_to @traveler
+      else
+        @traveler = Traveler.create(email: oauth_email)
+        redirect_to @traveler
+      end
     else
-      render :new
+      @traveler = Traveler.find_by(name: params[:traveler][:name])
+      if @traveler && @traveler.authenticate(params[:traveler][:password])
+        session[:traveler_id] = @traveler.id
+        redirect_to @traveler
+      else
+        render :new
+      end
     end
   end
 
