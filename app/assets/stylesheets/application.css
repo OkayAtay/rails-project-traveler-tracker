@@ -4,7 +4,6 @@ body {
     background-position: center 50px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* padding: 10px 20px; */
   }
 
 
@@ -129,8 +128,6 @@ body {
 
   .form a.button{
     top: 70%;
-    /* transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%); */
     background-color: #f1f1f1;
     color: black;
     font-size: 16px;
@@ -152,25 +149,23 @@ body {
   }
 
   .topnav {
-    background-color: #00001a;
-    border: 1px solid #e7e7e7;
     font-family: 'Markazi Text', serif;
     position: fixed;
     top: 0;
-    width: 95%;
+    width: 100%;
   }
 
   .topnav a {
     float: right;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .topnav a:hover {
-    background-color: #ddd;
+    background-color:	#ADD8E6;
     color: black;
   }
 

@@ -3,6 +3,7 @@ require 'pry'
 class Trip < ApplicationRecord
   belongs_to :traveler
   belongs_to :attraction
+  # accepts_nested_attributes_for :attractions
 
   def self.trips?
     if self.all == []

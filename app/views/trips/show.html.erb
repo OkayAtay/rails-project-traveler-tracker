@@ -1,7 +1,16 @@
-<h1> Trip Name: <%=@trip.name%></h1>
-<h1> Dates: <%=@trip.start_date%></h1> - <h1><%=@trip.name%></h1>
-<%@trip.attractions.each do |attraction|%>
-  <%=link_to attraction.name, attraction_path(attraction)%>
-<%end%>
-
-<a href="/trips/index" class="button">View All Trips</a>
+<div class="row" >
+  <div class="column">
+    <div class="info-text">
+      <h1> Trip Name: <%=@trip.name%></h1>
+    </div>
+  </div>
+  <div class="column">
+    <div class="form">
+      <h1> Dates: <%=@trip.start_date%></h1> - <h1><%=@trip.name%></h1>
+      <%@trip.attractions.each do |attraction|%>
+        <%=link_to attraction.name, attraction_path(attraction)%>
+      <%end%>
+      <a href="/trips/index" class="button">View All Trips</a>
+    </div>
+  </div>
+<div>

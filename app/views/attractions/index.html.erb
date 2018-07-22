@@ -1,3 +1,14 @@
-<%@attractions.each do |a|%>
-  <%=a.name%>
-<%end%>
+<div class="row" >
+  <div class="column">
+    <div class="info-text">
+      <h1> All Attractions</h1>
+    </div>
+  </div>
+  <div class="column">
+    <div class="form">
+      <%@attractions.each do |a|%>
+        <%=link_to a.name, attraction_path(a)%>
+      <%end%>
+    </div>
+  </div>
+<div>

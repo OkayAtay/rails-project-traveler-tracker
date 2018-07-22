@@ -1,4 +1,18 @@
-<h1>Index of All Trips Here</h1>
-<%@trips.each do |trip|%>
-  <%= link_to trip.name, trip_path(trip)%>
-<%end%>
+<div class="row">
+  <div class="column">
+    <div class="info-text">
+      <h1> All Trips</h1> </br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="form">
+      <% if Trip.trips?%>
+        <%@trips.each do |trip|%>
+          <%= link_to trip.name, trip_path(trip)%>
+        <%end%>
+      <%else%>
+        <h2> You have no upcoming trips </h2>
+      <%end%>
+    </div>
+  </div>
+</div>

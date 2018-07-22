@@ -1,13 +1,22 @@
-<h1>Test Path</h1>
-
-<%= form_for(@trip) do |f| %>
-  <%=f.hidden_field :traveler_id%>
-  <%=f.label :name%> </br>
-  <%= f.text_field :name %>
-  Trip Start Date: <%= f.datetime_select :start_date %>
-  Trip End Date: <%= f.datetime_select :end_date%>
-  (Add ability to either select an attraction or add your own)
-  <%=f.fields_for :attractions%>
-
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="column">
+    <div class="info-text">
+      <h1> Create Your Trip</h1> </br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="form">
+      <%= form_for @trip, url: traveler_trips_path do |f| %>
+        <%=f.hidden_field :traveler_id%>
+        Trip Name:
+        <%= f.text_field :name %> </br>
+        Trip Start Date: <%= f.datetime_select :start_date %></br>
+        Trip End Date: <%= f.datetime_select :end_date%></br>
+        (Add ability to either select an attraction or add your own)</br>
+        Add Existing Attraction: <%=f.collection_select :attraction_id, Attraction.all, :id, :name %> </br>
+        Add New Attraction: </br>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

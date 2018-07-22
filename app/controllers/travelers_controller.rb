@@ -16,7 +16,9 @@ class TravelersController < ApplicationController
   end
 
   def trip
-    @trav
+    @traveler = Traveler.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
+    render template: 'trips/show'
   end
 
   def new
@@ -24,6 +26,7 @@ class TravelersController < ApplicationController
   end
 
   def create
+    @traveler = Traveler.new(traveler_params)
     if @traveler.save
       session[:traveler_id] = @traveler.id
       redirect_to @traveler
@@ -34,15 +37,12 @@ class TravelersController < ApplicationController
 
   private
 
-  def set_user
-    @traveler = Traveler.find(params[:id])
-  end
-
   def traveler_params
     params.require(:traveler).permit(
       :name,
       :email,
       :budget,
+      :password,
       :nationality,
       :interests
     )

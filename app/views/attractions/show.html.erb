@@ -1,6 +1,15 @@
-<h2> Name: <%=@attraction.name%></h2>
-<h2>Location:<%=@attraction.location%></h2>
-<h2>Hours: <%=@attraction.hours%></h2>
-<h2> Price: <%=@attraction.price%></h2>
-
-  <a href="attractions/index" class="button">All Attractions</a>
+<div class="row">
+  <div class="column">
+    <div class="info-text">
+      <h1> <%=@attraction.name%></h1> </br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="form">
+      <h2>Location:<%=@attraction.location%></h2></br>
+      <h2>Hours: <%=@attraction.hours%></h2></br>
+      <h2>Price: <%=@attraction.price%></h2></br>
+      <a href="/attractions/index" class="button">All Attractions</a>
+    </div>
+  </div>
+</div>
