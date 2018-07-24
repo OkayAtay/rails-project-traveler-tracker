@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 2018_07_24_110521) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "attractions_trips", force: :cascade do |t|
+    t.integer "trip_id"
+    t.integer "attraction_id"
+    t.index ["attraction_id"], name: "index_attractions_trips_on_attraction_id"
+    t.index ["trip_id"], name: "index_attractions_trips_on_trip_id"
+  end
+
   create_table "travelers", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -43,13 +50,6 @@ ActiveRecord::Schema.define(version: 2018_07_24_110521) do
     t.datetime "updated_at", null: false
     t.index ["attraction_id"], name: "index_trips_on_attraction_id"
     t.index ["traveler_id"], name: "index_trips_on_traveler_id"
-  end
-
-  create_table "trips_attractions", force: :cascade do |t|
-    t.integer "trip_id"
-    t.integer "attraction_id"
-    t.index ["attraction_id"], name: "index_trips_attractions_on_attraction_id"
-    t.index ["trip_id"], name: "index_trips_attractions_on_trip_id"
   end
 
 end

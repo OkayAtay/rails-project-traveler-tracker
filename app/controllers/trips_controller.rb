@@ -1,14 +1,15 @@
 require 'pry'
 class TripsController < ApplicationController
-  before_action :set_user, only: [:show, :index]
+  before_action :set_user, only: [:create, :show, :index]
 
   def new
     @trip = Trip.new(traveler_id: params[:traveler_id])
+    3.times {@trip.attractions.build}
   end
 
   def create
         trip = Trip.create(trip_params)
-    if trip.save?
+    if trip.save
       redirect_to traveler_trips_path(@traveler)
     else
       render :new
@@ -27,6 +28,13 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
+  def attraction_attributes=(attraction_attributes)
+    attraction_attributes.values.each do |attraction_attribute|
+      attraction = Attraction.find_or_create_by(attraction_attribute)
+      self.attractions << attraction
+    end
+  end
+
 
   private
 
@@ -36,7 +44,8 @@ class TripsController < ApplicationController
       :start_date,
       :end_date,
       :traveler_id,
-      attraction_ids:[]
+      attraction_ids:[],
+      attraction_attributes: [:name,:location,:hours,:price]
     )
   end
 

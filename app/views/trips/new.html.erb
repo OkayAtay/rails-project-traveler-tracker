@@ -12,15 +12,15 @@
         <%= f.text_field :name %> </br>
         Trip Start Date: <%= f.datetime_select :start_date %></br>
         Trip End Date: <%= f.datetime_select :end_date%></br>
-        (Add ability to either select an attraction or add your own)</br>
-        Add Existing Attraction: <%=f.collection_select :attraction_id, Attraction.all, :id, :name %> </br>
-        Add New Attraction: </br>
+        Add Attractions: </br>
+        <h3>Add Existing:<%=f.collection_select :attraction_id, Attraction.all, :id, :name %></br>
+        Add New:</br>
         <%=f.fields_for :attractions, @trip.attractions.build do |attraction_fields|%>
-          Name: <%=attraction_fields.text_field :name %>
-          Location: <%=attraction_fields.text_field :location %>
-          Hours: <%=attraction_fields.text_field :hours %>
+          Name: <%=attraction_fields.text_field :name %></br>
+          Location: <%=attraction_fields.text_field :location %></br>
+          Hours: <%=attraction_fields.text_field :hours %></br>
           Price: <%=attraction_fields.text_field :price %>
-        <%end%>
+        <%end%> </h3>
         <%= f.submit %>
       <% end %>
     </div>

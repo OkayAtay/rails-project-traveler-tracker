@@ -126,6 +126,13 @@ body {
     transform: translate(-30%, -50%);
   }
 
+  .form h3 {
+    font-size:18px;
+    font-family: 'Markazi Text', serif;
+    text-align: center;
+    color: gray;
+  }
+
   .form a.button{
     top: 70%;
     background-color: #f1f1f1;
@@ -145,6 +152,7 @@ body {
     background-color: #008CBA;
     color: white;
   }
+
 
   }
 
