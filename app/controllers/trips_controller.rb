@@ -7,7 +7,6 @@ class TripsController < ApplicationController
   end
 
   def create
-    binding.pry
         trip = Trip.create(trip_params)
     if trip.save?
       redirect_to traveler_trips_path(@traveler)

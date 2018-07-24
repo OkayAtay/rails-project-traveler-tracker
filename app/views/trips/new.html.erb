@@ -15,6 +15,12 @@
         (Add ability to either select an attraction or add your own)</br>
         Add Existing Attraction: <%=f.collection_select :attraction_id, Attraction.all, :id, :name %> </br>
         Add New Attraction: </br>
+        <%=f.fields_for :attractions, @trip.attractions.build do |attraction_fields|%>
+          Name: <%=attraction_fields.text_field :name %>
+          Location: <%=attraction_fields.text_field :location %>
+          Hours: <%=attraction_fields.text_field :hours %>
+          Price: <%=attraction_fields.text_field :price %>
+        <%end%>
         <%= f.submit %>
       <% end %>
     </div>

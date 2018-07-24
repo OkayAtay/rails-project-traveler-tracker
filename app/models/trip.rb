@@ -2,8 +2,8 @@ require 'pry'
 
 class Trip < ApplicationRecord
   belongs_to :traveler
-  belongs_to :attraction
-  # accepts_nested_attributes_for :attractions
+  has_and_belongs_to_many :attractions
+  accepts_nested_attributes_for :attractions
 
   def self.trips?
     if self.all == []
@@ -16,3 +16,8 @@ class Trip < ApplicationRecord
   end
 
 end
+
+#belongs_to traveler
+#attraction has_many trips
+#trip has_many attractions
+#trip_attractions
