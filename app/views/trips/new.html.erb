@@ -13,16 +13,10 @@
         Trip Start Date: <%= f.datetime_select :start_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
         Trip End Date: <%= f.datetime_select :end_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
         <h3>What do you want to see?</br>
-        <%=f.collection_check_boxes :attraction_ids, Attraction.all, :id, :name %></br>
-        Or Add New:</br>
-        <%=f.fields_for :attraction, @trip.attractions.build do |attraction_fields|%>
-          Name: <%=attraction_fields.text_field :name %></br>
-          Location: <%=attraction_fields.text_field :location %></br>
-          Hours: <%=attraction_fields.text_field :hours %></br>
-          Price: <%=attraction_fields.text_field :price %>
-        <%end%> </h3>
+        <%=f.collection_check_boxes :attraction_ids, Attraction.all, :id, :name %><br>
         <%= f.submit %>
-      <% end %>
+      <% end %> </br>
+    </br><a href="<%new_attraction_path%>" class="button">Add New Attraction</a>
     </div>
   </div>
 </div>

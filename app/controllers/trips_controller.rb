@@ -7,25 +7,15 @@ class TripsController < ApplicationController
   end
 
   def create
-      trip = Trip.new(
-        name: params[:trip][:name],
-        start_date: params[:trip][:start_date],
-        traveler_id: params[:trip][:traveler_id],
+      trip = Trip.new(trip_params
       ) #list out parameters 1x1, then iterate through the Ids and build them into the attractions array
     if trip.valid?
       binding.pry
-      @attractions = params[:trips][:attraction_ids]
+      @attractions = params[:trip][:attraction_ids]
+      @attractions.reject! {|a| a.empty?}
       @attractions.each do |a|
-        if a != ""
-          trip.attractions << a
-        end
+          trip.attractions << Attraction.find_by_id(a.to_i)
       end
-      @attraction = trip.build_attraction (
-        # name: params[:trip][:attraction][:name],
-        # location: params[:trip][:attraction][:location],
-        # hours: params[:trip][:attraction][:hours],
-        # price: params[:trip][:attraction][:price]
-      )
       trip.save
       redirect_to traveler_trips_path(@traveler)
     else
@@ -56,7 +46,7 @@ class TripsController < ApplicationController
     @traveler = Traveler.find(params[:traveler_id])
   end
 
-  def destroy
+  def delete
     @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to traveler_trips_path(@traveler)
@@ -71,7 +61,6 @@ class TripsController < ApplicationController
       :end_date,
       :traveler_id,
       attraction_ids:[],
-      attraction: [:name,:location,:hours,:price]
     )
   end
 

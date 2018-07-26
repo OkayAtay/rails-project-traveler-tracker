@@ -16,7 +16,7 @@
       <%if @traveler%>
         <a href="/logout">Logout</a>
         <a href="<%=attractions_path%>">Attractions</a>
-        <a href="<%=travelers_path(@traveler)%>">Profile</a>
+        <a href="<%=traveler_path(@traveler)%>">Profile</a>
       <%end%>
     </div>
     <%= yield %>

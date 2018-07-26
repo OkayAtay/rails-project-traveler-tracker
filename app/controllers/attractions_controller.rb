@@ -31,6 +31,11 @@ before_action :set_traveler, only: [:new, :create, :show, :index]
 
   end
 
+  def destroy
+    @attraction.delete
+    redirect_to attractions_path
+  end
+
   private
 
   def attraction_params

@@ -2,7 +2,7 @@ class TravelersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
-
+    render :show
   end
 
   def index

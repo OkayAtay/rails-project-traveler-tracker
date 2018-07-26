@@ -11,7 +11,7 @@
         <%=link_to attraction.name, attraction_path(attraction)%> </br>
       <%end%>
       <a href="<%edit_traveler_trip_path(@traveler, @trip)%>" class="button">Edit Trip</a> </br>
-      <a href="" class="button">Delete Trip</a>
+      <a href="<%traveler_trips_path%>" class="button">Delete Trip</a>
     </div>
   </div>
 <div>
