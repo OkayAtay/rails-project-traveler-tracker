@@ -15,9 +15,9 @@
     <div class="topnav">
       <%if @traveler%>
         <a href="/logout">Logout</a>
+        <a href="<%=attractions_path%>">Attractions</a>
+        <a href="<%=travelers_path(@traveler)%>">Profile</a>
       <%end%>
-      <a href="attractions#index">Attractions</a>
-      <a href="travelers#show">Profile</a>
     </div>
     <%= yield %>
   </body>

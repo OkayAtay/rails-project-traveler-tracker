@@ -29,7 +29,8 @@ class SessionsController < ApplicationController
   end
 
   def delete
-    session[:traveler_id].clear
+    session.clear
+    redirect_to '/'
   end
 
 end

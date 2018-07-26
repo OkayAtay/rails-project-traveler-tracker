@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_user
-    @traveler = Traveler.find(params[:id])
+      @traveler = Traveler.find(params[:id])
   end
-  
+
 end

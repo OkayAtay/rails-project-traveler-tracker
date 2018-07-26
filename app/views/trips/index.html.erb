@@ -1,3 +1,4 @@
+<%require 'pry'%>
 <div class="row">
   <div class="column">
     <div class="info-text">
@@ -6,9 +7,9 @@
   </div>
   <div class="column">
     <div class="form">
-      <% if Trip.trips?%>
-        <%@trips.each do |trip|%>
-          <%= link_to trip.name, trip_path(trip)%>
+      <% if @traveler.trips%>
+        <%@traveler.trips.each do |trip|%>
+          <%= link_to trip.name, traveler_trip_path(@traveler, trip)%> </br>
         <%end%>
       <%else%>
         <h2> You have no upcoming trips </h2>

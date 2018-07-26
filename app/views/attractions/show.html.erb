@@ -6,10 +6,11 @@
   </div>
   <div class="column">
     <div class="form">
-      <h2>Location:<%=@attraction.location%></h2></br>
-      <h2>Hours: <%=@attraction.hours%></h2></br>
-      <h2>Price: <%=@attraction.price%></h2></br>
-      <a href="/attractions/index" class="button">All Attractions</a>
+      Location:<%=@attraction.location%></br>
+      Hours: <%=@attraction.hours%></br>
+      Price: $<%=@attraction.price%></br>
+      <a href="" class="button">Delete Attraction</a>
+      <a href="<%edit_attraction_path(@attraction)%>" class="button">Edit Attractions</a>
     </div>
   </div>
 </div>
