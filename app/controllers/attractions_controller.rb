@@ -1,5 +1,6 @@
+require 'pry'
 class AttractionsController < ApplicationController
-before_action :set_traveler, only: [:new, :create, :show, :index]
+before_action :set_traveler
 
   def new
     @attraction = Attraction.new
@@ -16,7 +17,7 @@ before_action :set_traveler, only: [:new, :create, :show, :index]
   end
 
   def show
-    @attraction = Attraction.find_by(params[:id])
+    @attraction = Attraction.find_by_id(params[:id])
   end
 
   def index
@@ -27,13 +28,11 @@ before_action :set_traveler, only: [:new, :create, :show, :index]
     @traveler = Traveler.find(session[:traveler_id])
   end
 
-  def edit
+  def update
+    @attraction = Attraction.find(params[:id])
+    @attraction.update(attraction_params)
+    redirect_to attraction_path(@attraction)
 
-  end
-
-  def destroy
-    @attraction.delete
-    redirect_to attractions_path
   end
 
   private

@@ -9,10 +9,7 @@
       Location:<%=@attraction.location%></br>
       Hours: <%=@attraction.hours%></br>
       Price: $<%=@attraction.price%></br>
-      <%= link_to 'Delete',
-             attraction_path(@attraction),
-                         method: :delete,
-                         data: { confirm: 'Are you sure?' } %> </br>
+
       </br> <a href="<%edit_attraction_path(@attraction)%>" class="button">Edit Attraction</a>
     </div>
   </div>

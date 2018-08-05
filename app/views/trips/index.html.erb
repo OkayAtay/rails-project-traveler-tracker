@@ -1,19 +1,19 @@
-<%require 'pry'%>
 <div class="row">
   <div class="column">
     <div class="info-text">
-      <h1> All Trips</h1> </br>
+      <h1> All <%=@traveler.name%>'s Trips</h1> </br>
     </div>
   </div>
   <div class="column">
     <div class="form">
-      <% if @traveler.trips%>
-        <%@traveler.trips.each do |trip|%>
+      <% if @trips%>
+        <%@trips.each do |trip|%>
           <%= link_to trip.name, traveler_trip_path(@traveler, trip)%> </br>
         <%end%>
       <%else%>
         <h2> You have no upcoming trips </h2>
       <%end%>
+      </br><a href="<%= new_traveler_trip_path(@traveler)%>" class="button">Create New Trip</a>
     </div>
   </div>
 </div>

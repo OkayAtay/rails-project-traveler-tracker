@@ -6,12 +6,16 @@
   </div>
   <div class="column">
     <div class="form">
-      Dates: <%=@trip.start_date.strftime("%b %e, %Y")%> </br>
+      Dates: <%=@trip.start_date.strftime("%b %e, %Y")%> - <%=@trip.end_date.strftime("%b %e, %Y")%> </br>
+      Planned Stops: </br>
       <%@trip.attractions.each do |attraction|%>
         <%=link_to attraction.name, attraction_path(attraction)%> </br>
-      <%end%>
-      <a href="<%edit_traveler_trip_path(@traveler, @trip)%>" class="button">Edit Trip</a> </br>
-      <a href="<%traveler_trips_path%>" class="button">Delete Trip</a>
+      <%end%> </br>
+      <%= link_to 'Delete Trip',
+             traveler_trip_path(@trip),
+                         method: :delete,
+                         data: { confirm: 'Are you sure?' } %> <br>
+      <%= link_to "Edit Trip", edit_traveler_trip_path(@trip.traveler, @trip) %>
     </div>
   </div>
 <div>

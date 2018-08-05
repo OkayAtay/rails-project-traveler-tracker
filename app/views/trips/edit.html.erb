@@ -6,23 +6,30 @@
   </div>
   <div class="column">
     <div class="form">
-      <%= form_for @trip, url: traveler_trips_path do |f| %>
+      <%= form_for @trip, url: edit_traveler_trip_path(@trip.traveler, @trip) do |f| %>
+      <% if @trip.errors.any? %>
+        <div id="error_explanation">
+          <h3>
+            <%= pluralize(@trip.errors.count, "error") %>
+            prohibited this post from being saved:
+          <ul>
+          <% @trip.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+          </h3>
+        </div>
+      <% end %>
         <%=f.hidden_field :traveler_id%>
         Trip Name:
         <%= f.text_field :name %> </br>
-        Trip Start Date: <%= f.datetime_select :start_date %></br>
-        Trip End Date: <%= f.datetime_select :end_date%></br>
-        Add Attractions: </br>
-        <h3>Add Existing:<%=f.collection_select :attraction_id, Attraction.all, :id, :name %></br>
-        Add New:</br>
-        <%=f.fields_for :attraction, @trip.attractions.build do |attraction_fields|%>
-          Name: <%=attraction_fields.text_field :name %></br>
-          Location: <%=attraction_fields.text_field :location %></br>
-          Hours: <%=attraction_fields.text_field :hours %></br>
-          Price: <%=attraction_fields.text_field :price %>
-        <%end%> </h3>
+        Trip Start Date: <%= f.datetime_select :start_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
+        Trip End Date: <%= f.datetime_select :end_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
+        <h3>What do you want to see?</h3>
+        <h3><%=f.collection_check_boxes :attraction_ids, Attraction.all, :id, :name %></h3>
+        <h3><a href="<%=new_attraction_path%>">Create New Attraction</a></h3>
         <%= f.submit %>
-      <% end %>
+      <%end%>
     </div>
   </div>
 </div>

@@ -1,3 +1,4 @@
+
 <div class="row" >
   <div class="column">
     <div class="info-text">
@@ -10,7 +11,9 @@
         <%=link_to a.name, attraction_path(a)%> </br>
       <%end%>
     </br>
-      <a href="<%=new_attraction_path%>" class="button">Create New Attraction</a>
+      <%if session.include? :traveler_id%>
+        <a href="<%=new_attraction_path%>" class="button">Create New Attraction</a>
+      <%end%>
     </div>
   </div>
 <div>

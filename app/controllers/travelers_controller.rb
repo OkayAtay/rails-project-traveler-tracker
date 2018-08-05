@@ -1,5 +1,7 @@
 class TravelersController < ApplicationController
   before_action :set_user, only: [:show]
+  before_action :require_login
+  skip_before_action :require_login, only: [:new, :create]
 
   def show
     render :show
@@ -23,6 +25,7 @@ class TravelersController < ApplicationController
 
   def new
     @traveler = Traveler.new
+
   end
 
   def create
@@ -46,5 +49,9 @@ class TravelersController < ApplicationController
       :nationality,
       :interests
     )
+  end
+
+  def require_login
+    return head(:forbidden) unless session.include? :traveler_id
   end
 end

@@ -5,6 +5,8 @@ class Trip < ApplicationRecord
   has_and_belongs_to_many :attractions
   accepts_nested_attributes_for :attractions
 
+  validates :name, :traveler_id, presence: true
+
   def self.trips?
     if self.all == []
       false
