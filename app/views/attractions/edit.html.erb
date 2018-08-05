@@ -6,7 +6,7 @@
   </div>
   <div class="column">
     <div class="form">
-      <%= form_for @attraction, url: attractions_path do |f| %>
+      <%= form_for @attraction, url: attraction_path(@attraction), :method => :patch  do |f| %>
           Name: <%=f.text_field :name %></br>
           Location: <%=f.text_field :location %></br>
           Hours: <%=f.text_field :hours %></br>

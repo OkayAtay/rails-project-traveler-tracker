@@ -1,6 +1,6 @@
 require 'pry'
 class TripsController < ApplicationController
-  before_action :set_traveler, only: [:new, :create, :show, :index, :edit, :destroy]
+  before_action :set_traveler, only: [:new, :create, :show, :index, :edit, :update, :destroy]
 
   def new
     @trip = Trip.new(traveler_id: params[:traveler_id])

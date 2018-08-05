@@ -24,8 +24,8 @@ before_action :set_traveler
     @attractions = Attraction.all
   end
 
-  def set_traveler
-    @traveler = Traveler.find(session[:traveler_id])
+  def edit
+    @attraction = Attraction.find_by_id(params[:id])
   end
 
   def update
@@ -44,5 +44,9 @@ before_action :set_traveler
       :hours,
       :price,
     )
+  end
+
+  def set_traveler
+    @traveler = Traveler.find(session[:traveler_id])
   end
 end

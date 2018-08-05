@@ -9,8 +9,7 @@
       Location:<%=@attraction.location%></br>
       Hours: <%=@attraction.hours%></br>
       Price: $<%=@attraction.price%></br>
-
-      </br> <a href="<%edit_attraction_path(@attraction)%>" class="button">Edit Attraction</a>
+      <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
     </div>
   </div>
 </div>

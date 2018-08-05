@@ -6,7 +6,7 @@
   </div>
   <div class="column">
     <div class="form">
-      <%= form_for @trip, url: edit_traveler_trip_path(@trip.traveler, @trip) do |f| %>
+      <%= form_for @trip, url: traveler_trip_path(@trip.traveler, @trip), :method => :patch do |f| %>
       <% if @trip.errors.any? %>
         <div id="error_explanation">
           <h3>
