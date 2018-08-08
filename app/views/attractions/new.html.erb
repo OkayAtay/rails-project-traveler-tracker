@@ -1,12 +1,25 @@
 <div class="row">
   <div class="column">
     <div class="info-text">
-      <h1> Create New Attraction</h1> 
+      <h1> Create New Attraction</h1>
     </div>
   </div>
   <div class="column">
     <div class="form">
       <%= form_for @attraction, url: attractions_path do |f| %>
+      <% if @attraction.errors.any? %>
+        <div id="error_explanation">
+          <h3>
+            <%= pluralize(@attraction.errors.count, "error") %>
+            prohibited this post from being saved:
+          <ul>
+          <% @attraction.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+          </h3>
+        </div>
+      <% end %>
           Name: <%=f.text_field :name %></br>
           Location: <%=f.text_field :location %></br>
           Hours: <%=f.text_field :hours %></br>

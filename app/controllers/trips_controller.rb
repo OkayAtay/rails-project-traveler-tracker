@@ -49,10 +49,6 @@ class TripsController < ApplicationController
     end
   end
 
-  def set_traveler
-    @traveler = Traveler.find_by(params[:id])
-  end
-
   def destroy
     @trip = Trip.find_by_id(params[:id])
     @trip.delete
@@ -71,4 +67,7 @@ class TripsController < ApplicationController
     )
   end
 
+  def set_traveler
+    @traveler = Traveler.find_by_id(session[:traveler_id])
+  end
 end

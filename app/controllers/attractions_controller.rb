@@ -47,6 +47,6 @@ before_action :set_traveler
   end
 
   def set_traveler
-    @traveler = Traveler.find(session[:traveler_id])
+    @traveler = Traveler.find_by_id(session[:traveler_id])
   end
 end

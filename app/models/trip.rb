@@ -14,7 +14,8 @@ class Trip < ApplicationRecord
   end
 
   def self.upcoming_trips
-    @upcoming_trips = Trip.find(:start_date < 90.days.from_now)
+    binding.pry
+    @upcoming_trips = Trip.where(:start_date < 90.days.from_now)
   end
 
 end

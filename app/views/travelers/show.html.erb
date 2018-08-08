@@ -11,8 +11,8 @@
  <div class="column">
    <div class="form">
       <h2> Upcoming Trips </h2>
-        <% if Trip.trips?%>
-          <%=Trip.upcoming_trips.each do |t|%>
+        <% if @traveler.trips%>
+          <%=@traveler.trips.upcoming_trips.each do |t|%>
             <p><%=t.name%></p>
           <%end%>
         <%else%>
