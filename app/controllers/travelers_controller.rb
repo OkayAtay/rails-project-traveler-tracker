@@ -2,14 +2,16 @@ require 'pry'
 class TravelersController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:new, :create]
+  before_action :set_traveler, only: [:show, :index]
+
 
   def show
-    @traveler = Traveler.find_by_id(session[:traveler_id])
     render :show
   end
 
   def index
-
+    @travelers = Traveler.all
+    render :index
   end
 
   def trips_index
@@ -53,6 +55,10 @@ class TravelersController < ApplicationController
 
   def require_login
     return head(:forbidden) unless session.include? :traveler_id
+  end
+
+  def set_traveler
+        @traveler = Traveler.find_by_id(session[:traveler_id])
   end
 
 end

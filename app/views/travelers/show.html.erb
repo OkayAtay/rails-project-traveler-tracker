@@ -1,7 +1,7 @@
 <div class="row">
   <div class="column">
     <div class="info-text">
-      <h1> Welcome <%=@traveler.name%> </h1> </br>
+      <h1> Welcome <%=@traveler.email%> </h1> </br>
       <br><h2> Additional Info </h2></br>
       <h2>Budget: $<%=@traveler.budget%></h2></br>
       <h2>Nationality: <%=@traveler.nationality%></h2></br>
@@ -12,7 +12,7 @@
    <div class="form">
       <h2> Upcoming Trips </h2>
         <% if @traveler.trips%>
-          <%=@traveler.trips.upcoming_trips.each do |t|%>
+          <%@traveler.trips.upcoming_trips.each do |t|%>
             <p><%=t.name%></p>
           <%end%>
         <%else%>

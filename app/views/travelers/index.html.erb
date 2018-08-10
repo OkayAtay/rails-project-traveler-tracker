@@ -1,0 +1,13 @@
+<div class="row" >
+  <div class="column">
+    <div class="info-text">
+      <h1> See who else traveling!</h1> </br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="form">
+      <%@travelers.each do |t|%>
+        <%=t.name%> </br>
+      <%end%>
+    </div>
+  </div>

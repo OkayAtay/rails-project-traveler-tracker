@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if auth_has = request.env["omniauth.auth"]
-      oauth_email = request.env["omniauth.auth"]["email"]
-      if @traveler = Traveler.find_by(email: oauth_email)
-        session[:traveler_id] = @traveler.id
-        redirect_to @traveler
-      else
-        @traveler = Traveler.create(email: oauth_email)
-        redirect_to @traveler
+    if auth_hash =  request.env['omniauth.auth']
+      @traveler = Traveler.find_or_create_by(:id => auth_hash['uid']) do |t|
+        binding.pry
+        t.name = auth_hash["info"]["nickname"],
+        t.email = auth_hash["info"]["email"],
+        t.password = SecureRandom.hex
       end
+        session[:traveler_id] = @traveler.id
+        redirect_to traveler_path(@traveler)
     else
       @traveler = Traveler.find_by(name: params[:traveler][:name])
       if @traveler && @traveler.authenticate(params[:traveler][:password])
@@ -30,6 +30,10 @@ class SessionsController < ApplicationController
   def delete
     session.clear
     redirect_to '/'
+  end
+
+  def auth_hash
+    request.env['omniauth.auth']
   end
 
 end

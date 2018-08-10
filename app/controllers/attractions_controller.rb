@@ -32,7 +32,6 @@ before_action :set_traveler
     @attraction = Attraction.find(params[:id])
     @attraction.update(attraction_params)
     redirect_to attraction_path(@attraction)
-
   end
 
   private

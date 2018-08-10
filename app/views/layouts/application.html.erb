@@ -12,7 +12,7 @@
 
   <body>
     <div class="topnav">
-        <%if session.include? :traveler_id%>>
+        <%if session[:traveler_id] && @traveler %>
           <a href="/logout">Logout</a>
           <a href="<%=attractions_path%>">Attractions</a>
           <a href="<%=traveler_trips_path(@traveler)%>">Trips</a>
