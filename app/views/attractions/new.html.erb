@@ -6,7 +6,7 @@
   </div>
   <div class="column">
     <div class="form">
-      <%= form_for @attraction, url: attractions_path do |f| %>
+      <%=  form_for @attraction, :hmtl => {:class => 'new_attraction'}, url: attractions_path do |f| %>
       <% if @attraction.errors.any? %>
         <div id="error_explanation">
           <h3>
