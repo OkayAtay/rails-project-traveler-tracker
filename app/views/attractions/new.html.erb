@@ -1,3 +1,5 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <div class="row">
   <div class="column">
     <div class="info-text">
@@ -6,7 +8,7 @@
   </div>
   <div class="column">
     <div class="form">
-      <%=  form_for @attraction, :hmtl => {:class => 'new_attraction'}, url: attractions_path do |f| %>
+      <%=  form_for @attraction, url: attractions_path do |f| %>
       <% if @attraction.errors.any? %>
         <div id="error_explanation">
           <h3>
