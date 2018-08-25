@@ -1,6 +1,6 @@
 Specifications for the Rails with jQuery Assessment
 Specs:
-
+Steps to Build out Ajax response: 
  Use jQuery for implementing new requirements:
  Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
   -- Create New Trip
