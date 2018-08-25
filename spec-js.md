@@ -1,13 +1,18 @@
 Specifications for the Rails with jQuery Assessment
 Specs:
 
- Use jQuery for implementing new requirements
+ Use jQuery for implementing new requirements:
  Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
+  -- Create New Trip
  Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
+  -- Create New Attraction [Essentially has an 'index' on the create Trip]
+  -- View Trip All
  Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
  Use your Rails API and a form to create a resource and render the response without a page refresh.
+ --Create New Attraction
  Translate JSON responses into js model objects.
  At least one of the js model objects must have at least one method added by your code to the prototype.
+ --TBD
 Confirm
 
  You have a large number of small Git commits
