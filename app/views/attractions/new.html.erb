@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
 	<title>New Attraction</title>
 </head>
 
-  <body id="home">
+  <body>
 
    <div class="row">
     <div class="column">
