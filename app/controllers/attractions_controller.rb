@@ -18,6 +18,7 @@ before_action :set_traveler
 
   def show
     @attraction = Attraction.find_by_id(params[:id])
+    render json: @attraction
   end
 
   def index
