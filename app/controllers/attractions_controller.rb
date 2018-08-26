@@ -4,6 +4,7 @@ before_action :set_traveler
 
   def new
     @attraction = Attraction.new
+    render :layout => false
   end
 
   def create
@@ -18,7 +19,10 @@ before_action :set_traveler
 
   def show
     @attraction = Attraction.find_by_id(params[:id])
-    render json: @attraction
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @attraction}
+    end
   end
 
   def index
