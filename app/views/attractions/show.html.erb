@@ -1,15 +1,23 @@
 <div class="row">
   <div class="column">
-    <div class="info-text">
-      <h1> <%=@attraction.name%></h1> </br>
+    <div class="info-text" id="attractionName">
+      <h1 id="attractionName"></h1>
+      <!-- <h1> <%=@attraction.name%></h1> </br> -->
     </div>
   </div>
   <div class="column">
+    <div class="form" id="attractionResults">
+      <h2 id="attractionLocation"></h2>
+      <h2 id="attractionHours"></h2>
+      <h2 id="attractionPrice"></h2>
+      <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
+    </div>
+  <!-- <div class="column">
     <div class="form">
       Location:<%=@attraction.location%></br>
       Hours: <%=@attraction.hours%></br>
       Price: $<%=@attraction.price%></br>
       <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
     </div>
-  </div>
+  </div> -->
 </div>

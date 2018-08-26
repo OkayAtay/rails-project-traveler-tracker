@@ -10,7 +10,7 @@ before_action :set_traveler
     @attraction = Attraction.new(attraction_params)
     if @attraction.valid?
       @attraction.save
-      redirect_to attraction_path(@attraction)
+      render json: @attraction, status: 201
     else
       render :new
     end
