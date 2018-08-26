@@ -9,7 +9,7 @@
     <div class="form" id="attractionResults">
       <h2 id="attractionLocation"><%=@attraction.location%></h2>
       <h2 id="attractionHours"><%=@attraction.hours%></h2>
-      <h2 id="attractionPrice">$<%=@attraction.price%><</h2>
+      <h2 id="attractionPrice"><%=@attraction.price%><</h2>
       <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
     </div>
     <a href="#" class="js-next" data-id="<%=@attraction.id%>">Next Attraction</a>
