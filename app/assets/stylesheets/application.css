@@ -6,7 +6,6 @@ body {
     background-attachment: fixed;
   }
 
-
   .first a.button {
     position: absolute;
     top: 70%;
@@ -103,6 +102,12 @@ body {
     margin: auto;
     top: auto;
     transform: translate(-30%, -50%);
+  }
+
+  #test_toggle {
+
+    display:none;
+
   }
 
   .form {

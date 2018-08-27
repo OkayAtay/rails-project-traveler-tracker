@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require jquery3
+//= require trips
 //= require attractions
 //= require_tree .
