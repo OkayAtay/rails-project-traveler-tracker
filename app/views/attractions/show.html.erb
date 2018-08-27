@@ -1,15 +1,15 @@
 <div class="row">
   <div class="column">
-    <div class="info-text" id="attractionName">
+    <div class="info-text">
       <h1 id="attractionName"><%=@attraction.name%></h1>
       <!-- <h1> <%=@attraction.name%></h1> </br> -->
     </div>
   </div>
   <div class="column">
     <div class="form" id="attractionResults">
-      <h2 id="attractionLocation"><%=@attraction.location%></h2>
-      <h2 id="attractionHours"><%=@attraction.hours%></h2>
-      <h2 id="attractionPrice"><%=@attraction.price%><</h2>
+      <h2 id="attractionLocation">Location: <p><%=@attraction.location%></p></h2>
+      <h2 id="attractionHours">Hours: <p><%=@attraction.hours%></p></h2>
+      <h2 id="attractionPrice">Price: <p><%=@attraction.price%></p></h2>
       <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
     </div>
     <a href="#" class="js-next" data-id="<%=@attraction.id%>">Next Attraction</a>
