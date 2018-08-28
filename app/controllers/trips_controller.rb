@@ -20,6 +20,7 @@ class TripsController < ApplicationController
   def index
     if params[:traveler_id].to_f == session[:traveler_id]
       @trips = Traveler.find_by_id(params[:traveler_id]).trips
+      render json: @trips, status: 201
     else
       render :new
     end
