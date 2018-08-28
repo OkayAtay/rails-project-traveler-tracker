@@ -7,7 +7,10 @@ class TripsController < ApplicationController
   end
 
   def create
+      params["trip"]["attraction_ids"] = []
+      params["trip"]["attraction_ids"] << params["trip"]["attraction_id"]
       @trip = Trip.new(trip_params)
+      binding.pry
     if @trip.save
       redirect_to traveler_trips_path(@traveler)
     else

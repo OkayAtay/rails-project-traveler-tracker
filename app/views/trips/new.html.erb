@@ -27,9 +27,10 @@
         Trip End Date: <%= f.datetime_select :end_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
         <!-- <h3>What do you want to see?</h3> -->
         <!-- <h3><%=f.collection_check_boxes :attraction_ids, Attraction.all, :id, :name %></h3> -->
-        <%=f.select :attraction_id, options_for_select(Attraction.all.collect{|attr| [attr.name, attr.id]}),{:include_blank=>"Please choose a Destination"}%>
-        <div id="moreAttractions"/>
-        <h3><a id="addAttractions" href="#" onclick="addFields()">Add Another Attraction</a></h3>
+        <%=f.select :attraction_id, options_for_select(Attraction.all.collect{|attr| [attr.name, attr.id]}),{:include_blank=>"Please choose an Attraction"}%>
+        <div id="moreAttractions">
+              <h3><a id="addAttractions" href="#">Add Another Attraction</a></h3>
+        </div>
         <%= f.submit %>
       <%end%>
       <h3><a id="createAttraction" href="<%=new_attraction_path%>">Create New Attraction</a></h3>
