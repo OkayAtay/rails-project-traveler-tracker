@@ -14,17 +14,17 @@ class TravelersController < ApplicationController
     render :index
   end
 
-  def trips_index
-    @traveler = Traveler.find(params[:id])
-    @trips = @traveler.trips
-    render template: 'trips/index'
-  end
+  # def trips_index
+  #   @traveler = Traveler.find(params[:id])
+  #   @trips = @traveler.trips
+  #   render json: @trips, status: 201
+  # end
 
-  def trip
-    @traveler = Traveler.find(params[:id])
-    @trip = Trip.find(params[:trip_id])
-    render template: 'trips/show'
-  end
+  # def trip
+  #   @traveler = Traveler.find(params[:id])
+  #   @trip = Trip.find(params[:trip_id])
+  #   render template: 'trips/show'
+  # end
 
   def new
     @traveler = Traveler.new

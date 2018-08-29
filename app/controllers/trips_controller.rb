@@ -21,6 +21,10 @@ class TripsController < ApplicationController
     if params[:traveler_id].to_f == session[:traveler_id]
       @trips = Traveler.find_by_id(params[:traveler_id]).trips
       render json: @trips, status: 201
+      # respond_to do |format|
+      #   format.html { render :index }
+      #   format.json { render json: @trips.to_json}
+      # end
     else
       render :new
     end
