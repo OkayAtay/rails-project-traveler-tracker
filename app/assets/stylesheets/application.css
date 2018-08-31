@@ -104,7 +104,7 @@ body {
     transform: translate(-30%, -50%);
   }
 
-  .createNewAttraction {
+  #createNewAttraction {
 
     display:none;
 
