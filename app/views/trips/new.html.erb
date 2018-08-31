@@ -35,14 +35,15 @@
         <h3><a id="addAttractions" href="#">Add Another Attraction</a></h3>
         <%= f.submit %>
       <%end%>
-      <h3><a id="createAttraction" href="<%=new_attraction_path%>">Create New Attraction</a></h3>
+      <h3><a id="createAttraction" href="<%=new_attraction_path%>" >Create New Attraction</a></h3>
       <div class="createNewAttraction">
-        <%=  form_for @attraction, url: attractions_path do |f| %>
+        <%=  form_for :attraction, url: attractions_path do |f| %>
           Name: <%=f.text_field :name %></br>
           Location: <%=f.text_field :location %></br>
           Hours: <%=f.text_field :hours %></br>
           Price: <%=f.text_field :price %></br>
         <%= f.submit %>
+      <%end%>
       </div>
     </div>
   </div>
