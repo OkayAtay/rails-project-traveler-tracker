@@ -29,20 +29,13 @@
         <%= f.text_field :name %> </br>
         Trip Start Date: <%= f.datetime_select :start_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
         Trip End Date: <%= f.datetime_select :end_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
-        <!-- <h3>What do you want to see?</h3> -->
-        <!-- <h3><%=f.collection_check_boxes :attraction_ids, Attraction.all, :id, :name %></h3> -->
         <div class="selectAttraction"><%=f.select :attraction_id, options_for_select(Attraction.all.collect{|attr| [attr.name, attr.id]}),{:include_blank=>"Please choose an Attraction"}%></div>
         <div id="moreAttractions">
-              <h3><a id="addAttractions" href="#">Add Another Attraction</a></h3>
         </div>
+        <h3><a id="addAttractions" href="#">Add Another Attraction</a></h3>
         <%= f.submit %>
       <%end%>
       <h3><a id="createAttraction" href="<%=new_attraction_path%>">Create New Attraction</a></h3>
-        <form id="test_toggle">
-          <b>First Name:</b> <input type="text" name="firstName">
-          <b>Last Name: </b><input type="text" name="lastName">
-           <button type="button" id="submit">Submit</button>
-        </form>
     </div>
   </div>
 </div>
