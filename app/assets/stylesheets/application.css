@@ -115,11 +115,12 @@ body {
     font-family: 'Markazi Text', serif;
     text-align: center;
     background-color: #F5F5F5;
-    padding: 10px 40px;
+    padding: 40px 40px 40px 40px;
     width: 80%;
     position:relative;
-    top: 25px;
+    top:30%;
     left: 20%;
+        overflow: auto;
   }
 
   .form p {
@@ -158,8 +159,7 @@ body {
     color: white;
   }
 
-
-  }
+}
 
   .topnav {
     font-family: 'Markazi Text', serif;
@@ -197,11 +197,17 @@ body {
   .column {
       float: left;
       margin: auto;
-      /* top: 50%; */
-      flex: 40%;
+      top: 60%;
+      flex: 30%;
       display: block;
-      left: 10%;
   }
+
+  #attractions{
+    height: 600px;
+    font-size:12px;
+
+  }
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -5,13 +5,12 @@
       <h1> All Attractions</h1>
     </div>
   </div>
-  <div class="column">
+  <div class="column" id="attractions">
     <div class="form">
       <%@attractions.each do |a|%>
-        <%=link_to a.name, attraction_path(a)%> </br>
+        <%=link_to a.name, attraction_path(a)%></br>
       <%end%>
-    </br>
-      <%if session.include? :traveler_id%>
+      <br> <%if session.include? :traveler_id%>
         <a href="<%=new_attraction_path%>" class="button">Create New Attraction</a>
       <%end%>
     </div>
