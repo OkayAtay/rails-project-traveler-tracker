@@ -10,7 +10,10 @@ before_action :set_traveler
   def create
     @attraction = Attraction.new(attraction_params)
     if @attraction.save
-      render json: @attraction, status: 201
+      respond_to do |format|
+        format.html { render :show }
+        format.json { render json: @attraction}
+      end
     else
       render :new
     end

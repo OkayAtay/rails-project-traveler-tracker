@@ -37,7 +37,7 @@
       <%end%>
       <h3><a id="createAttraction" href="#" >Create New Attraction</a></h3>
       <div id="createNewAttraction">
-        <%=  form_for :attraction, url: attractions_path do |f| %>
+        <%=  form_for :attraction, url: attractions_path, html: {id:"new_attraction"} do |f| %>
           Name: <%=f.text_field :name %></br>
           Location: <%=f.text_field :location %></br>
           Hours: <%=f.text_field :hours %></br>
