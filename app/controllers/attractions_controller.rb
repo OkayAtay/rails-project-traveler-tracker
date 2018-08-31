@@ -38,7 +38,7 @@ before_action :set_traveler
     redirect_to attraction_path(@attraction)
   end
 
-  def destroy 
+  def destroy
     @attraction = Attraction.find_by_id(params[:id])
     @attraction.delete
     redirect_to attractions_path

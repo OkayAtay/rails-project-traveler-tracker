@@ -11,6 +11,7 @@
       <h2 id="attractionHours">Hours: <p><%=@attraction.hours%></p></h2>
       <h2 id="attractionPrice">Price: <p><%=@attraction.price%></p></h2>
       <div><%= link_to "Edit Attraction", edit_attraction_path(@attraction) %></div>
+      <div><%= link_to "Delete Attraction", attraction_path(@attraction), :method => :delete %></div>
       <div><a href="#" class="js-next" data-id="<%=@attraction.id%>">Next Attraction</a></div>
 
     </div>

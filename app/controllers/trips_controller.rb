@@ -29,6 +29,14 @@ class TripsController < ApplicationController
     end
   end
 
+  # // DELETE /travelers/:traveler_id/trips/:id(.:format)
+  def destroy
+    @traveler = Traveler.find(params[:traveler_id])
+    @trip = @traveler.trips.find(params[:id])
+    @trip.destroy
+    redirect_to traveler_path(@traveler)
+  end
+
   def show
     @trip = Trip.find(params[:id])
   end
@@ -54,11 +62,6 @@ class TripsController < ApplicationController
     end
   end
 
-  def destroy
-    @trip = Trip.find_by_id(params[:id])
-    @trip.delete
-    redirect_to traveler_path(@traveler)
-  end
 
   private
 
