@@ -30,7 +30,7 @@
         Trip Start Date: <%= f.datetime_select :start_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
         Trip End Date: <%= f.datetime_select :end_date, :ampm => true, :start_year => 2018, :order => [:month, :day, :year] %></br>
         <h3>What do you want to see?</h3>
-        <h3><%=f.collection_check_boxes :attraction_ids, Attraction.all, :id, :name %></h3>
+        <h3 id="attraction_boxes"><%=f.collection_check_boxes :attraction_ids, Attraction.all, :id, :name %></h3>
         <%= f.submit %>
       <%end%>
       <h3><a id="createAttraction" href="#" >Create New Attraction</a></h3>

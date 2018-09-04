@@ -8,6 +8,7 @@ before_action :set_traveler
   end
 
   def create
+    binding.pry
     @attraction = Attraction.new(attraction_params)
     if @attraction.save
       respond_to do |format|

@@ -8,7 +8,9 @@ class TripsController < ApplicationController
 
   def create
     binding.pry
-      @trip = Trip.new(trip_params)
+    @attraction = Attraction.new(attraction_params)
+    # <Create a new attraction [ ]  -- and then sent to database>
+    @trip = Trip.new(trip_params)
     if @trip.save
       redirect_to traveler_trips_path(@traveler)
     else
@@ -71,6 +73,15 @@ class TripsController < ApplicationController
       :end_date,
       :traveler_id,
       attraction_ids:[],
+    )
+  end
+
+  def attraction_params
+    params.require(:attraction).permit(
+      :name,
+      :location,
+      :hours,
+      :price,
     )
   end
 
