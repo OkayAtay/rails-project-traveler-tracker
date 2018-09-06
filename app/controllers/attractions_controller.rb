@@ -9,7 +9,6 @@ before_action :set_traveler
 
   def create
     @attraction = Attraction.new(attraction_params)
-    binding.pry
     if @attraction.save
       respond_to do |format|
         format.html { render :show }
