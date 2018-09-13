@@ -13,9 +13,5 @@
       <%end%> </br>
       <%= link_to "Edit Trip", edit_traveler_trip_path(@trip.traveler, @trip) %>
     </div>
-    <%= link_to 'Delete Trip',
-           traveler_trip_path(@traveler, @trip),
-                       :method => :delete,
-                       data: { confirm: 'Are you sure?' } %> <br>
   </div>
 <div>
