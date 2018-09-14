@@ -20,7 +20,7 @@ class TripsController < ApplicationController
       @trips = Traveler.find_by_id(params[:traveler_id]).trips
       respond_to do |format|
         format.html { render :index }
-        format.json { render json: @trips.to_json}
+        format.json { render json: @trips}
       end
     else
       render :new
