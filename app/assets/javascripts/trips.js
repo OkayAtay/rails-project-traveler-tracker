@@ -1,23 +1,45 @@
 //This function presents the CM with trips#index
 // document.addEventListener("DOMContentLoaded")
-  $(function () {
-    $("#indexTrips").on("click", function(e) {
-      e.preventDefault()
-      let id = parseInt($("#indexTrips").attr("data-id"));
-      $.get("/travelers/" + id + "/trips", function(data) {
-        let trips = data;
-        // inject the code into the View
-        $("div.form").html("")
-        trips.forEach(function(trip){
-          trip_element = document.createElement("a");
-          trip_element.href = id + "/trips/" + trip.id ;
-          trip_element.innerHTML = trip.name;
-          $("div.form").append(trip_element);
-          $("div.form").append(document.createElement("br"))
-        })
-      }, "json");
-    });
+$(function () {
+  $("#indexTrips").on("click", function(e) {
+    e.preventDefault()
+    let id = parseInt($("#indexTrips").attr("data-id"));
+    $.get("/travelers/" + id + "/trips", function(data) {
+      let trips = data;
+      // inject the code into the View
+      $("div.form").html("")
+      trips.forEach(function(trip){
+        let trip_element = document.createElement("a");
+        trip_element.href = "#";
+        // trip_element.href = id + "/trips/" + trip.id ;
+        trip_element.innerHTML = trip.name;
+        trip_element.dataset.id = trip.id;
+        trip_element.dataset.travelerid = trip.traveler_id;
+        trip_element.className = "tripLink";
+        $("div.form").append(trip_element);
+        $("div.form").append(document.createElement("br"))
+      })
+    }, "json");
   });
+
+  $(".form").on("click", ".tripLink", function(e){
+    e.preventDefault()
+    let traveler_id = this.getAttribute("data-travelerid")
+    let trip_id = this.getAttribute("data-id")
+    $.get("/travelers/" + traveler_id + "/trips/" + trip_id , function(data) {
+      $("div.form").html("");
+      let trip = data;
+      let trip_name = document.createElement("h2");
+      trip_name.innerHTML = trip.name;
+      $("div.form").append(trip_name);
+      trip.attractions.forEach(function(attraction){
+        let trip_attraction = document.createElement("p");
+        trip_attraction.innerHTML = attraction.name;
+        $("div.form").append(trip_attraction);
+      })
+    }, "json");
+  });
+});
 
 //This function displays a form to create a new Attraction
 $(function displayCreateAttractionForm(){

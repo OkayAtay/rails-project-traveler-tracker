@@ -37,6 +37,10 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @trip}
+    end
   end
 
   def edit
